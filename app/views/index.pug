@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  div.row
+    each val, index in data
+      div.col-lg-3
+        div
+          h4
+            a(href=`/category/${val.url}`)= val.title
+          div
+            img(src=`/images/cat/${val.image}`)

@@ -1,0 +1,36 @@
+# Исключаем файлы настроек среды
+.env
+process.env
+
+# Игнорируем зависимости npm
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Исключаем логи и временные файлы
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+coverage/
+
+# Исключаем файлы сборки
+dist/
+build/
+
+# Исключаем файлы IDE и редакторов
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Исключаем кеши и временные файлы
+tmp/
+temp/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,37 @@
+{
+    "monitors": {
+        "url": "monitors",
+        "title": "Moнітори",
+        "image": "17010_mac_monitor_screen_icon.png"
+    },
+    "printers": {
+        "url": "printers",
+        "title": "Принтеры",
+        "image": "17023_printer_satish_icon.png"
+    },
+    "pens": {
+        "url": "pens",
+        "title": "Канцелярия",
+        "image": "17012_edit_pen_write_icon.png"
+    },
+    "laptop": {
+        "url": "laptop",
+        "title": "Ноутбуки",
+        "image": "60879_computer_laptop_notebook_icon.png"
+    },
+    "paints": {
+        "url": "paints",
+        "title": "Митцю",
+        "image": "17022_colors_draw_paint_icon.png"
+    },
+    "apple": {
+        "url": "apple",
+        "title": "Apple",
+        "image": "60884_apple_computer_imac_mac_icon.png"
+    },
+    "furniture": {
+        "url": "furniture",
+        "title": "Меблі",
+        "image": "60885_chair_furniture_icon.png"
+    }
+}
