@@ -6,8 +6,8 @@ block content
   div.row
     each val, index in data
       div.col-lg-3
-        div
-          h4
+        div.border.p-3.mb-3.text-center
+          div.mb-2
+            img.img-fluid(src=`/images/cat/${val.image}`)
+          h4.h6
             a(href=`/category/${val.url}`)= val.title
-          div
-            img(src=`/images/cat/${val.image}`)
