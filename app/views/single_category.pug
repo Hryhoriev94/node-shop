@@ -7,3 +7,14 @@ block content
             div= data.description
         div.col-2
             img.img-fluid(src=`/images/cat/${data.image}`)
+
+    div.row
+        each item in goods
+            div.col-lg-3
+                div.border.p-3.mb-3.text-center
+                    div.mb-2
+                        img.img-fluid(src=`${item.image}`)
+                    div.mb-2
+                        span= item.cost
+                    h6
+                        a(href=`${data['url']}/${item.url}`)=item.title

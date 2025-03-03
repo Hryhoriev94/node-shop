@@ -25,15 +25,24 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:category_name', async function(req, res, next) {
   const category_name = req.params.category_name
-  const query = Q.get_single_category;
+  let query = Q.get_single_category;
 
   const connection = await mysql.createConnection(CONFIG)
 
-  const [data] = await connection.execute(query, [category_name])
-  console.log(data)
-  connection.end;
+  const [data] = await connection.execute(query, [category_name]);
+
+  query = "SELECT * FROM goods LEFT JOIN goods_lang ON goods_lang.gid = goods.id WHERE goods.cid = ? and goods_lang.lang = 'ua'";
+
+  console.log(data[0].cid)
+
+  const [goods] = await connection.execute(query, [data[0].cid]);
+
+  console.log(goods)
+
+  connection.end();
   res.render('single_category', {
-    data: data[0]
+    data: data[0],
+    goods: goods
   })
 });
 
