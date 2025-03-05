@@ -33,16 +33,41 @@ router.get('/:category_name', async function(req, res, next) {
 
   query = "SELECT * FROM goods LEFT JOIN goods_lang ON goods_lang.gid = goods.id WHERE goods.cid = ? and goods_lang.lang = 'ua'";
 
-  console.log(data[0].cid)
 
   const [goods] = await connection.execute(query, [data[0].cid]);
-
-  console.log(goods)
 
   connection.end();
   res.render('single_category', {
     data: data[0],
     goods: goods
+  })
+});
+
+router.get('/:category_name/:goodsname', async function
+    (req, res, next) {
+
+  // /category/laptop/mac-air-13
+
+  const category_name = req.params.category_name
+  const goodsname = req.params.goodsname;
+
+  let query = Q.get_single_category;
+
+  const connection = await mysql.createConnection(CONFIG)
+
+  const [cat] = await connection.execute(query, [category_name]);
+
+  query = "SELECT * FROM goods LEFT JOIN goods_lang ON goods_lang.gid = goods.id WHERE " +
+      "goods.url = ? and goods_lang.lang = 'ua'";
+
+
+  const [goods] = await connection.execute(query, [goodsname]);
+
+
+  connection.end();
+  res.render('single_product', {
+    cat: cat[0],
+    goods: goods[0]
   })
 });
 

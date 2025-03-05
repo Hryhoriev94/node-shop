@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div.row
+        div.col-lg-7
+            h2.mb-2=goods.title
+            img.img-fluid(src=`${goods.image}`)
+        div.col-lg-5.d-flex.align-items-center.flex-wrap
+            p=goods.text
+            div.w-100
+                span=goods.cost
+                button="add"
